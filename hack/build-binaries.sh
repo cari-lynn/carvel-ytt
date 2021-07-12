@@ -16,6 +16,8 @@ go mod tidy
 export CGO_ENABLED=0
 LDFLAGS="-X github.com/k14s/ytt/pkg/version.Version=$VERSION -buildid="
 
+./hack/build.sh $VERSION # Used to generate website/generated.go used by ytt website
+
 GOOS=darwin GOARCH=amd64 go build -ldflags="$LDFLAGS" -trimpath -o ytt-darwin-amd64 ./cmd/ytt
 GOOS=darwin GOARCH=arm64 go build -ldflags="$LDFLAGS" -trimpath -o ytt-darwin-arm64 ./cmd/ytt
 GOOS=linux GOARCH=amd64 go build -ldflags="$LDFLAGS" -trimpath -o ytt-linux-amd64 ./cmd/ytt

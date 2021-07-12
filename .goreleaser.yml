@@ -40,7 +40,7 @@ snapshot:
 release:
   # Repo in which the release will be created.
   github:
-    owner: vmware-tanzu
+    owner: cari-lynn
     name: carvel-ytt
 
   # If set to true, will not auto-publish the release.
